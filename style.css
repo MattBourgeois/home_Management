@@ -1,0 +1,40 @@
+*{
+	margin: auto;
+	padding: 0%;
+}
+nav{
+	display: flex;
+	border: 1px red solid;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	padding: 5px;
+	background-color: #cae8ca;
+	border: 2px solid #4CAF50;
+}
+.dash{
+	display: flex;
+	justify-content: space-around;
+}
+main{
+	display: flex;
+	/* flex-direction: column; */
+}
+div#left_side{
+	flex: 1;
+	border: 1px blue solid;
+	width: 50%;
+	margin-right: 5px;
+}
+div#right_side{
+	flex: 1;
+	border: 1px blue solid;
+	width: 50%;
+	margin-left	: 5px;
+}
+a{
+	font-size: larger;
+}
+main.h1{
+	align-items: center;
+}
