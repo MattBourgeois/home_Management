@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home Page</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="cal_style.css">
 </head>
 <body>
 	<nav id="sticky">
@@ -17,13 +18,38 @@
 	<main>
 		<div id="left_side">
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio enim vel recusandae neque ex illum blanditiis, ipsam eveniet fugiat laborum ratione. Ab similique nihil libero quibusdam quia voluptatibus fuga! Dolore.</p>
+			
 		</div>
-		<div id="right_side">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nulla quibusdam ex facilis vel blanditiis assumenda dolorem harum natus. Reprehenderit eos harum labore ea quisquam officiis atque illum distinctio accusamus?</p>
+		<div id="Calender">
+			<h4>Open days</h4>
+			<div class="calender">
+				<table>
+					<thead>
+						<tr>
+							<th>Sunday</th>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>friday</th>
+							<th>Saturday</th>
+						</tr>
+					</thead>
+					<tbody id="table_body">
+						{% for row in calendar_rows %}
+						<tr>
+							{% for day in row %}
+							<td{% if day.booked %} class="booked"{% endif %}>{{ day.date }}</td>
+							{% endfor %}
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</main>
 	<footer>
-		
+	
+	</footer>
 </body>
-</footer>
 </html>

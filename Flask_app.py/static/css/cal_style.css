@@ -1,0 +1,23 @@
+.calendar {
+    font-family: Arial, sans-serif;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.calendar th {
+    background-color: #f2f2f2;
+}
+
+.calendar .booked {
+    background-color: #ffcccc;
+}
