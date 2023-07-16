@@ -3,5 +3,5 @@ from Flask_app import app
 
 @app.route("/")
 def index():
-	return render_template("login.html")
-	# return render_template("index.html", booked_dates=booked_dates)
+	# return render_template("login.html") this will be back once i finsih login mysql
+	return render_template("dashboard.html")
