@@ -1,7 +1,7 @@
 from Flask_app.config.mysqlconnection import connectToMySQL
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-from Flask import flash
+from flask import flash
 
 class Person:
 	db_name = 'Home_management'
@@ -13,3 +13,15 @@ class Person:
 		self.Password = data["Password"]
 		self.Created_at = data["Created_at"]
 		self.Updated_at = data["Updated_at"]
+		self.user_id = None
+
+	@classmethod
+	def save_user(cls, data):
+		query = "INSERT INTO Users (First_name, Last_name, Email, Password) VALUES(%(First_name)s, %(Last_name)s, %(Email)s, %(Password)s);"
+		return connectToMySQL(cls.db_name).query_db(query, data)
+
+	@classmethod
+	def get_by_email(cls, data):
+		query = "SELECT * FROM Users WHERE Email = %(Email)s;"
+		results = connectToMySQL(cls.db_name).query_db(query, data)
+		return cls(results[0])

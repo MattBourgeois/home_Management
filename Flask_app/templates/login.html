@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="d-flex justify-content-around">
-        <form action="/register" method="post" class="col-4 p-4 bg-dark text-light">
+        <form action="/Register" method="post" class="col-4 p-4 bg-dark text-light">
             <h2 class="text-primary">Register</h2>
             {% with messages = get_flashed_messages(category_filter=['register']) %}
                 {% if messages %}
@@ -43,7 +43,7 @@
             </div>
             <input type="submit" value="Register" class="btn btn-primary">
         </form>
-        <form action="/login" method="post" class="col-4 p-4 bg-dark text-light">
+        <form action="/Login" method="post" class="col-4 p-4 bg-dark text-light">
             <h2 class="text-success">Login</h2>
             {% with messages = get_flashed_messages(category_filter=['login']) %}
                 {% if messages %}
