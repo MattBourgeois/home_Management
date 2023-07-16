@@ -3,5 +3,5 @@ from Flask_app import app
 
 @app.route("/")
 def index():
-	booked_dates = ['2023-07-18', '2023-07-19', '2023-07-25', '2023-07-26']
-	return render_template("index.html", booked_dates=booked_dates)
+	return render_template("login.html")
+	# return render_template("index.html", booked_dates=booked_dates)
