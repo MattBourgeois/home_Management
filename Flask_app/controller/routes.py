@@ -16,9 +16,8 @@ def Reg():
 		"Email": request.form["Email"],
 		"Password": bcrypt.generate_password_hash(request.form["Password"])
 	}
-	id = Person.save_user((data))
-	print(id)
-	session["user_id"] = id
+	id= User.save(data)
+	session['user_id'] = id
 	return redirect("/dash")
 
 @app.route("/Login", methods = ["POST"])
@@ -42,5 +41,5 @@ def dashboard():
 
 @app.route("/account")
 def My_account():
-	user = Person.get_by_id(1)
+	user = Person.get_by_id(session['user_id'])
 	return render_template("account.html", user = user)

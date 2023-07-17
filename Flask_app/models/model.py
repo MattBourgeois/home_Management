@@ -13,7 +13,7 @@ class Person:
 		self.Password = data["Password"]
 		self.Created_at = data["Created_at"]
 		self.Updated_at = data["Updated_at"]
-		self.user_id = None
+		# self.user_id = None
 
 	@classmethod
 	def save_user(cls, data):
@@ -27,11 +27,10 @@ class Person:
 		return cls(results[0])
 	
 	@classmethod
-	def get_by_id(cls, data):
+	def get_by_id(cls, user_id):
 		data = {
-			'id': 1
-		}
-		query = "SELECT * FROM Users WHERE id = %(id)s;"
+		'id': user_id
+			}
+		query = "SELECT * FROM users WHERE id = %(id)s;"
 		results = connectToMySQL(cls.db_name).query_db(query, data)
-		print(results)
 		return cls(results[0])
