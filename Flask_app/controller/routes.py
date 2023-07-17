@@ -17,6 +17,7 @@ def Reg():
 		"Password": bcrypt.generate_password_hash(request.form["Password"])
 	}
 	id = Person.save_user((data))
+	print(id)
 	session["user_id"] = id
 	return redirect("/dash")
 
@@ -27,6 +28,7 @@ def Login():
 		flash("Incorrect Email or Password!")
 		return redirect('/')
 	session["user_id"] = user.id
+	print(session["user_id"])
 	return redirect("/dash")
 
 @app.route("/Logout")
@@ -37,3 +39,8 @@ def Logout():
 @app.route("/dash")
 def dashboard():
 	return render_template("dashboard.html")
+
+@app.route("/account")
+def My_account():
+	user = Person.get_by_id(1)
+	return render_template("account.html", user = user)

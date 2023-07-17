@@ -25,3 +25,13 @@ class Person:
 		query = "SELECT * FROM Users WHERE Email = %(Email)s;"
 		results = connectToMySQL(cls.db_name).query_db(query, data)
 		return cls(results[0])
+	
+	@classmethod
+	def get_by_id(cls, data):
+		data = {
+			'id': 1
+		}
+		query = "SELECT * FROM Users WHERE id = %(id)s;"
+		results = connectToMySQL(cls.db_name).query_db(query, data)
+		print(results)
+		return cls(results[0])
