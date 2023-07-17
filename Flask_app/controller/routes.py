@@ -43,3 +43,4 @@ def dashboard():
 def My_account():
 	user = Person.get_by_id(session['user_id'])
 	return render_template("account.html", user = user)
+
