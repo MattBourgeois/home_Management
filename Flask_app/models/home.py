@@ -13,5 +13,5 @@ class Home:
 
 	@classmethod
 	def save_request(cls, data):
-		query = "INSTER INTO Home_management (Name, Address, ServiceRequest) VALUES (%(Name)s, %(Name)s, %(Address)s, %(ServiceRequest)s);"
+		query = "INSTER INTO Home_management (Name, Address, ServiceRequest) VALUES (%(Name)s, %(Address)s, %(Address)s, %(ServiceRequest)s);"
 		return connectToMySQL(cls, db_name).query_db(query, data)
