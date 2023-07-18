@@ -16,7 +16,7 @@ def Reg():
 		"Email": request.form["Email"],
 		"Password": bcrypt.generate_password_hash(request.form["Password"])
 	}
-	id= User.save(data)
+	id = User.save(data)
 	session['user_id'] = id
 	return redirect("/dash")
 
