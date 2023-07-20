@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request, session
 from Flask_app import app
 from Flask_app.models.model import Person
 from Flask_app.controller import routes
+from Flask_app.models.home import *
 
 @app.route("/maintenance")
 def maintenance_request():
@@ -13,7 +14,6 @@ def send_request():
 	data = {
 		"Name": request.form["Name"],
 		"Address": request.form["Address"],
-		"DaysRented": request.form["DaysRented"],
 		"ServiceRequest": request.form["ServiceRequest"]
 	}
 	save_request(data)
