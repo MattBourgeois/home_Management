@@ -14,5 +14,5 @@ class House:
 
 		@classmethod
 		def save_request(cls, data):
-			query = "INSTER INTO Homes (Name, Address, ServiceRequest) VALUES (%(Name)s, %(Address)s, %(ServiceRequest)s);"
+			query = "INSTER INTO Homes (Name, Address, DaysRented, ServiceRequest) VALUES (%(Name)s, %(Address)s, %(DaysRented)s %(ServiceRequest)s);"
 			return connectToMySQL(cls, db_name).query_db(query, data)
