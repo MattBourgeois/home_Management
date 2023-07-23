@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, flash
 from Flask_app import app
 from Flask_app.models.model import Person
+from Flask_app.models.home import House
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
