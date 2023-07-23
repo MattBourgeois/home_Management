@@ -16,6 +16,5 @@ def send_request():
 		"Address": request.form["Address"],
 		"ServiceRequest": request.form["ServiceRequest"]
 	}
-	id = House.save_request(data)
-	session['user_id'] = id
+	House.save_request(data)
 	return redirect("/dash")
