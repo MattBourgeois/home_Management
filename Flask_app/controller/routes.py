@@ -44,3 +44,8 @@ def My_account():
 	user = Person.get_by_id(session['user_id'])
 	return render_template("account.html", user = user)
 
+@app.route("/my_homes")
+def user_homes():
+	# this will show all users houses/addresses or if they are rented out
+	return render_template("users_home.html")
+
