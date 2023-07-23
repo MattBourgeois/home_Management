@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request, session
 from Flask_app import app
 from Flask_app.models.model import Person
 from Flask_app.controller import routes
-from Flask_app.models.home import *
+from Flask_app.models.home import House
 
 @app.route("/maintenance")
 def maintenance_request():
@@ -16,5 +16,6 @@ def send_request():
 		"Address": request.form["Address"],
 		"ServiceRequest": request.form["ServiceRequest"]
 	}
-	save_request(data)
+	id = House.save_request(data)
+	session['user_id'] = id
 	return redirect("/dash")
