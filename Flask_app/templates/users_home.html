@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Houses</title>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Houses</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/sidebar.css') }}">
 </head>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/sidebar.css') }}">
-</head>
+This will show the homes and ablility to add houses
 <div class="sidenav">
 	<a href="/dash">Dashboard</a>
 	<a href="/account">My Account</a>
@@ -28,13 +29,12 @@
 		<label for="Yes">Yes</label>
 		<input type="radio" name="No" id="No">
 		<label for="No">No</label>
-		
+
 
     	<button type="submit" class="btn">Login</button>
     	<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 	</form>
 </div>
 <body>
-	This will show the homes and ablility to add houses
 </body>
 </html>
