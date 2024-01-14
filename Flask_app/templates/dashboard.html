@@ -8,18 +8,13 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/sidebar.css') }}">
 </head>
 <div class="sidenav">
-	<a href="#">About</a>
-	<a href="#">Services</a>
-	<a href="#">Clients</a>
-	<a href="#">Contact</a>
+	<a href="/account">My Account</a>
+	<a href="/my_homes">My Houses</a>
+	<a href="/maintenance	">Maintence Requests</a>
+	<a href="/Logout">Logout</a>
 </div>
 <body>
-	<nav id="sticky">
-		<a href="/account">My Account</a>
-		<a href="/my_homes">My Houses</a>
-		<a href="/maintenance	">Maintence Requests</a>
-		<a href="/Logout">Logout</a>
-	</nav>
+
 	<h1 class="dash">Dashboard</h1>
 	<main>
 		<div id="left_side">
@@ -27,30 +22,8 @@
 			
 		</div>
 		<div id="Calender">
-			<h4>Open days</h4>
+			<h4>Open Houses</h4>
 			<div class="calender">
-				<table>
-					<thead>
-						<tr>
-							<th>Sunday</th>
-							<th>Monday</th>
-							<th>Tuesday</th>
-							<th>Wednesday</th>
-							<th>Thursday</th>
-							<th>Friday</th>
-							<th>Saturday</th>
-						</tr>
-					</thead>
-					<tbody id="table_body">
-						{% for row in calendar_rows %}
-						<tr>
-							{% for day in row %}
-							<td{% if day.booked %} class="booked"{% endif %}>{{ day.date }}</td>	
-							{% endfor %}
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
 			</div>
 		</div>
 	</main>
