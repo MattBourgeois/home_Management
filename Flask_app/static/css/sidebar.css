@@ -18,6 +18,9 @@
 	color: #818181;
 	display: block;
 }
+body{
+	margin-left: 160px;
+}
 
   /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
