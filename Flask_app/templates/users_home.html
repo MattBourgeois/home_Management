@@ -13,6 +13,27 @@
 	<a href="/maintenance	">Maintence Requests</a>
 	<a href="/Logout">Logout</a>
 </div>
+<button class="open-button" onclick="openForm()">Open Form</button>
+
+<!-- The form -->
+<div class="form-popup" id="myForm">
+	<form action="/action_page.php" class="form-container">
+    	<h1>Login</h1>
+	    <label for="Name"><b>House Name</b></label>
+		<input type="text" placeholder="Enter Email" name="email" required>
+		<label for="Address"><b>Address</b></label>
+		<input type="text" placeholder="Enter Address" name="Address" required>
+		<label for="DaysRented">Is someone living here?</label>
+		<input type="radio" id="Yes" name="yes">
+		<label for="Yes">Yes</label>
+		<input type="radio" name="No" id="No">
+		<label for="No">No</label>
+		
+
+    	<button type="submit" class="btn">Login</button>
+    	<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	</form>
+</div>
 <body>
 	This will show the homes and ablility to add houses
 </body>
