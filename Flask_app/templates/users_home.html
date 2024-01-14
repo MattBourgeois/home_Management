@@ -6,6 +6,7 @@
 		<title>My Houses</title>
 	</head>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/sidebar.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/add_home.css') }}">
 </head>
 This will show the homes and ablility to add houses
 <div class="sidenav">
@@ -35,6 +36,13 @@ This will show the homes and ablility to add houses
     	<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 	</form>
 </div>
-<body>
-</body>
+<script>
+	function openForm() {
+	document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+	document.getElementById("myForm").style.display = "none";
+}
+</script>
 </html>
