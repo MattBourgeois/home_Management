@@ -15,12 +15,19 @@ This will show the homes and ablility to add houses
 	<a href="/maintenance	">Maintence Requests</a>
 	<a href="/Logout">Logout</a>
 </div>
+<body>
+	
+	<form action="/action_page.php">
+		<input type="file" id="myFile" name="filename">
+		<input type="submit">
+	</form>
+</body>
 <button class="open-button" onclick="openForm()">Open Form</button>
 
 <!-- The form -->
 <div class="form-popup" id="myForm">
 	<form action="/action_page.php" class="form-container">
-    	<h1>Login</h1>
+    	<h1>House</h1>
 	    <label for="Name"><b>House Name</b></label>
 		<input type="text" placeholder="Name of House" name="email" required>
 		<label for="Address"><b>Address</b></label>
